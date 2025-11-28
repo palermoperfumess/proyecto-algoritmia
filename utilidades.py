@@ -1,4 +1,3 @@
-
 import re
 from datetime import datetime, date
 from config import FECHA_HOY
@@ -130,7 +129,7 @@ def print_tabla(headers, filas, widths):
     for fila in filas:
         linea = "|"
         for c in range(len(widths)):
-            txt = fila[c]
+            txt = str(fila[c])  # CORREGIDO: Convertir a string
             if len(txt) > widths[c]:
                 txt = txt[0:widths[c] - 1] + "…"
             espacio = " " * (widths[c] - len(txt))
